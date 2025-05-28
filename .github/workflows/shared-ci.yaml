@@ -1,0 +1,17 @@
+name: Trigger Shared Workflow
+
+on:
+  push:
+    branches:
+      - main  # Trigger on push to main branch
+  pull_request:
+    branches:
+      - main  # Trigger on PR to main branch
+
+jobs:
+  call-shared-workflow:
+    uses: teja-scs-aqua/graphql-vulnerable/.github/workflows/sbom.yaml@main  # Reference shared repo workflow
+    with:
+      run-tests: true
+    secrets: inherit
+      
