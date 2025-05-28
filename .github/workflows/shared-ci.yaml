@@ -1,6 +1,7 @@
 name: Trigger Shared Workflow
 
 on:
+  workflow_call:
   push:
     branches:
       - main  # Trigger on push to main branch
